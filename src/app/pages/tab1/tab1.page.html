@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab One
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +14,14 @@
         <ion-card-title>Welcome to Ionic</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+        <p>Si deseas realizar un nuevo scan de tu codigo has clic en el siguiente boton.</p>
+        <ion-button 
+          expand="full"
+          (click)="scan()"
+        >Scan QR</ion-button>
+      
       </ion-card-content>
+    
     </ion-card>
     <ion-list lines="none">
       <ion-list-header>
@@ -38,4 +44,5 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list>
+    
 </ion-content>
