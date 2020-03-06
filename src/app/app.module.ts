@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 // Plugins
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Toast } from '@ionic-native/toast/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     BarcodeScanner,
+    Toast,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

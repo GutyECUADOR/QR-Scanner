@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Toast } from '@ionic-native/toast/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -8,9 +9,23 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 })
 export class Tab1Page {
 
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  slideOptions: any = {
+    allowSlidePrev: false,
+    allowSlideNext: false
+  };
 
-  scan() {
+  constructor(private barcodeScanner: BarcodeScanner,
+              private toast: Toast ) { }
+
+  ionViewDidEnter() {
+    this.toast.show(`I'm a toast`, '5000', 'center').subscribe(
+      toast => {
+        console.log(toast);
+      }
+    );
+  }
+
+  public scan() {
     this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);
      }).catch(err => {
